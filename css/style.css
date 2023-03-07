@@ -1,0 +1,266 @@
+/* estilos generales */
+
+* {
+    border: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* barra de navegacion */
+
+header {
+    height: calc(100vh - 80px);
+    /*background: linear-gradient(to right, #D3CCE3, #E9E4F0);*/
+    background: linear-gradient(to right, #0f0c29, #24243e);
+    height: 80px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0;
+    padding: 0 50px;
+}
+
+.logo img {
+    height: 140px;
+}
+
+img:hover {
+    color: #3bbcf0;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+a:hover {
+    color: #18bec4;
+}
+
+/* botones */
+
+button {
+    --primary-color: #fefeff;
+    --secondary-color: #2e2d2d;
+    --hover-color: #2dacbd;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+
+button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+button:hover {
+    background-color: #18bec4;
+}
+
+button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+    right: 0;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .main-menu {
+        display: none;
+
+    }
+
+    .boton-acceder {
+        display: none;
+    }
+
+    .menu-dropdown {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-dropdown.show {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/* header */
+
+.hero {
+    margin: 80px 0px 600px 0px;
+    height: calc(100vh - 80px);
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    height: calc(100vh - 80px);
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+}
+
+.card {
+    position: relative;
+    list-style: none;
+    width: 220px;
+    transition: .3s ease;
+}
+
+.card:before {
+    content: "";
+    display: block;
+    padding-bottom: 150%;
+}
+
+.card-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    background-size: 350px;
+    background-position: center;
+    filter: brightness(.9) saturate(1) contrast(1);
+    transform-origin: bottom;
+    transform: scale(1) translateZ(0);
+    transition: .3s ease;
+}
+
+.card:hover .card-background {
+    transform: scale(1.15) translateZ(0);
+    background-size: 250px;
+}
+
+.card-container:hover .card:not(:hover) {
+    transform: scale(.9);
+}
+
+.card-container:hover>.card:not(:hover) .card-background,
+.card-container:hover>.card:not(:hover) .card-category {
+    filter: brightness(.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.content {
+    top: 50%;
+    left: 0;
+    padding: 25px;
+    position: absolute;
+}
+
+.card-category {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.card-heading {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+}
+
+
+
+/* Servicios */
+
+
+
+/* servicios ama de casa */
+
+.amaDeCasa {
+    padding: 20px 60px 20px 60px;
+    justify-items: center;
+    text-align: justify;
+}
+
+#ama {
+    margin: 20px 0px;
+}
+
+/* footer */
+
+footer {
+    height: 80px;
+    background: linear-gradient(to right, #D3CCE3, #E9E4F0);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: rgb(65, 65, 65);
+    font-weight: 600;
+}
